@@ -23,10 +23,26 @@ export const defaultTheme = {
       card: '#F3F2F2',
     },
   },
-  font: {
-    family: {
-      roboto: "'Roboto', sans-serif",
-      baloo: "'Baloo Chettan 2', cursive",
+  fonts: {
+    roboto: {
+      family: `'Roboto', sans-serif`,
+      size: {
+        large: '1.25rem',
+        medium: '1rem',
+        small: '0.875rem',
+        xsmall: '0.75rem',
+        tag: '0.625rem',
+      },
+    },
+    baloo: {
+      family: `'Baloo Chettan 2', cursive`,
+      size: {
+        xlarge: '3rem',
+        large: '2rem',
+        medium: '1.5rem',
+        small: '1.25rem',
+        xsmall: '1.125rem',
+      },
     },
   },
 }
