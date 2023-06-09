@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "id": "3c1a9895-06b0-4f1f-bfe9-5da0c9010738",
+      "name": "Tradicional",
+      "description": "Um café tradicional com sabor intenso e aromático, perfeito para os amantes de café clássico."
+    },
+    {
+      "id": "a46be92a-0df4-4c37-8607-6de87841ac8d",
+      "name": "Especial",
+      "description": "Uma seleção especial de grãos de café de alta qualidade, com sabores complexos e notas distintas."
+    },
+    {
+      "id": "f3eb51e0-0e6e-47ef-8b16-b0e9d0979d13",
+      "name": "Com leite",
+      "description": "Uma combinação perfeita de café forte e cremoso com leite, proporcionando uma experiência suave e aveludada."
+    },
+    {
+      "id": "d732e04a-62a7-4a16-b0fc-64224cc5846f",
+      "name": "Gelado",
+      "description": "Uma refrescante opção de café gelado, perfeito para os dias quentes, com sabor suave e agradável."
+    },
+    {
+      "id": "a812ff26-4a96-4e6f-ae3b-7d52e8b7f2a5",
+      "name": "Alcoólico",
+      "description": "Uma mistura sofisticada de café e bebidas alcoólicas, criando uma combinação única de sabores e aromas."
+    }
+  ]
+}
