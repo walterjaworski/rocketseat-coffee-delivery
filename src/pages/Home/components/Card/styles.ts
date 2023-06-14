@@ -5,6 +5,7 @@ export const Wrapper = styled.article`
   background: ${({ theme }) => theme.colors.base.card};
   border-radius: 6px 36px;
   max-width: 16rem;
+  margin: 0 auto;
   overflow: visible;
   position: relative;
 `
@@ -51,7 +52,7 @@ export const Title = styled.h3`
 `
 
 export const Description = styled.p`
-  font-size: ${({ theme }) => theme.fonts.roboto.size.medium};
+  font-size: ${({ theme }) => theme.fonts.roboto.size.small};
   color: ${({ theme }) => theme.colors.base.label};
   margin-top: 0.5rem;
 `
@@ -59,7 +60,7 @@ export const Description = styled.p`
 export const Footer = styled.footer`
   margin-top: 2rem;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   gap: 8px;
   padding: 0 1.5rem 1.25rem;
@@ -84,7 +85,7 @@ export const QuantityContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   background: ${({ theme }) => theme.colors.base.button};
-  padding: 0.5rem 0;
+  padding: 0.2rem 0;
   border-radius: 6px;
 `
 

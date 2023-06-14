@@ -45,4 +45,7 @@ export const defaultTheme = {
       },
     },
   },
+  gradients: {
+    border: 'linear-gradient(102.89deg, #DBAC2C 2.61%, #8047F8 98.76%)',
+  },
 }

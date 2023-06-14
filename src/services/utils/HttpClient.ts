@@ -1,15 +1,21 @@
+/* eslint-disable no-undef */
+/// <reference lib="dom" />
+
 class HttpClient {
-  constructor(baseURL) {
+  private baseURL: string
+
+  constructor(baseURL: string) {
     this.baseURL = baseURL
   }
 
-  get(path, options) {
+  public get(path: string, options?: RequestInit): Promise<any> {
     return this.makeRequest(path, {
       method: 'GET',
+      ...options,
     })
   }
 
-  async makeRequest(path, options) {
+  private async makeRequest(path: string, options: RequestInit): Promise<any> {
     const headers = new Headers()
 
     if (options.headers) {

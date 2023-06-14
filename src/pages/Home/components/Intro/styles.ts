@@ -4,7 +4,7 @@ import { Container } from '../../../../components/Container'
 
 import introBackground from '../../../../assets/images/background.png'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   background-image: url(${introBackground});
   background-position: top center;
   background-size: cover;

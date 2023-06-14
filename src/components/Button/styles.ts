@@ -21,15 +21,32 @@ export const ButtonContainer = styled.button`
 
   &.primary {
     background-color: ${({ theme }) => theme.colors.primary.main};
+
+    &:hover,
+    &:focus {
+      background-color: ${({ theme }) => theme.colors.primary.light};
+    }
   }
 
   &.primaryLight {
     background-color: ${({ theme }) => theme.colors.primary.light};
     color: ${({ theme }) => theme.colors.primary.dark};
+
+    &:hover,
+    &:focus {
+      background-color: ${({ theme }) => theme.colors.primary.main};
+      color: ${({ theme }) => theme.colors.white};
+    }
   }
 
   &.secondary {
     background-color: ${({ theme }) => theme.colors.secondary.main};
+
+    &:hover,
+    &:focus {
+      background-color: ${({ theme }) => theme.colors.secondary.light};
+      color: ${({ theme }) => theme.colors.white};
+    }
   }
 
   &.secondaryLight {
@@ -38,6 +55,16 @@ export const ButtonContainer = styled.button`
 
     svg {
       fill: ${({ theme }) => theme.colors.secondary.main};
+    }
+
+    &:hover,
+    &:focus {
+      background-color: ${({ theme }) => theme.colors.secondary.main};
+      color: ${({ theme }) => theme.colors.white};
+
+      svg {
+        fill: ${({ theme }) => theme.colors.white};
+      }
     }
   }
 `

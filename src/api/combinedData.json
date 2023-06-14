@@ -5,7 +5,7 @@
         "id": "8b1763ff-9e75-4de1-b870-00d7369370a0",
         "name": "Expresso Tradicional",
         "description": "O tradicional café feito com água quente e grãos moídos",
-        "categorieId": [
+        "categoriesIds": [
           "3c1a9895-06b0-4f1f-bfe9-5da0c9010738"
         ],
         "price": 9.90,
@@ -15,7 +15,7 @@
         "id": "f7c3eae4-6199-4d4f-9ad6-ff53b271e1c2",
         "name": "Expresso Americano",
         "description": "Expresso diluído, menos intenso que o tradicional",
-        "categorieId": [
+        "categoriesIds": [
           "3c1a9895-06b0-4f1f-bfe9-5da0c9010738"
         ],
         "price": 9.90,
@@ -25,7 +25,7 @@
         "id": "a00b5b8a-4572-478b-bd53-6782fd12b52a",
         "name": "Expresso Cremoso",
         "description": "Café expresso tradicional com espuma cremosa",
-        "categorieId": [
+        "categoriesIds": [
           "3c1a9895-06b0-4f1f-bfe9-5da0c9010738"
         ],
         "price": 9.90,
@@ -35,7 +35,7 @@
         "id": "6c15e49b-158d-4e5a-af6d-0a50e95c682b",
         "name": "Expresso Gelado",
         "description": "Bebida preparada com café expresso e cubos de gelo",
-        "categorieId": [
+        "categoriesIds": [
           "3c1a9895-06b0-4f1f-bfe9-5da0c9010738",
           "d732e04a-62a7-4a16-b0fc-64224cc5846f"
         ],
@@ -46,7 +46,7 @@
         "id": "86dc2079-5f5e-42b1-8e2b-df9e6b1d35fe",
         "name": "Café com Leite",
         "description": "Meio a meio de expresso tradicional com leite vaporizado",
-        "categorieId": [
+        "categoriesIds": [
           "3c1a9895-06b0-4f1f-bfe9-5da0c9010738",
           "f3eb51e0-0e6e-47ef-8b16-b0e9d0979d13"
         ],
@@ -57,7 +57,7 @@
         "id": "d0f0d0a5-c932-47a4-95b5-2ae41777a50f",
         "name": "Latte",
         "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
-        "categorieId": [
+        "categoriesIds": [
           "3c1a9895-06b0-4f1f-bfe9-5da0c9010738",
           "f3eb51e0-0e6e-47ef-8b16-b0e9d0979d13"
         ],
@@ -68,7 +68,7 @@
         "id": "3dc764b7-24d0-4cfd-8b8f-0705a75da203",
         "name": "Capuccino",
         "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
-        "categorieId": [
+        "categoriesIds": [
           "3c1a9895-06b0-4f1f-bfe9-5da0c9010738",
           "f3eb51e0-0e6e-47ef-8b16-b0e9d0979d13"
         ],
@@ -79,7 +79,7 @@
         "id": "b2274e70-40e2-45d3-80ce-5e2068e02b19",
         "name": "Macchiato",
         "description": "Café expresso misturado com um pouco de leite quente e espuma",
-        "categorieId": [
+        "categoriesIds": [
           "3c1a9895-06b0-4f1f-bfe9-5da0c9010738",
           "f3eb51e0-0e6e-47ef-8b16-b0e9d0979d13"
         ],
@@ -90,7 +90,7 @@
         "id": "9e8a8cfd-052d-4040-88f3-319e717ce2df",
         "name": "Mocaccino",
         "description": "Café expresso com calda de chocolate, pouco leite e espuma",
-        "categorieId": [
+        "categoriesIds": [
           "3c1a9895-06b0-4f1f-bfe9-5da0c9010738",
           "f3eb51e0-0e6e-47ef-8b16-b0e9d0979d13"
         ],
@@ -101,7 +101,7 @@
         "id": "ec47aabb-aaab-4f3f-a5d3-b76aef05f597",
         "name": "Chocolate Quente",
         "description": "Bebida feita com chocolate dissolvido no leite quente e café",
-        "categorieId": [
+        "categoriesIds": [
           "a46be92a-0df4-4c37-8607-6de87841ac8d",
           "f3eb51e0-0e6e-47ef-8b16-b0e9d0979d13"
         ],
@@ -112,7 +112,7 @@
         "id": "c297c437-5150-4e71-9180-68f2c8f61727",
         "name": "Cubano",
         "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
-        "categorieId": [
+        "categoriesIds": [
           "a46be92a-0df4-4c37-8607-6de87841ac8d",
           "d732e04a-62a7-4a16-b0fc-64224cc5846f",
           "a812ff26-4a96-4e6f-ae3b-7d52e8b7f2a5"
@@ -124,7 +124,7 @@
         "id": "0a6e830a-df35-4d99-8a2b-9c02176adef3",
         "name": "Havaiano",
         "description": "Bebida adocicada preparada com café e leite de coco",
-        "categorieId": [
+        "categoriesIds": [
           "a46be92a-0df4-4c37-8607-6de87841ac8d"
         ],
         "price": 9.90,
@@ -134,7 +134,7 @@
         "id": "3f75d695-5d4d-4b7d-9f5d-1b747ad402f6",
         "name": "Árabe",
         "description": "Bebida preparada com grãos de café árabe e especiarias",
-        "categorieId": [
+        "categoriesIds": [
           "a46be92a-0df4-4c37-8607-6de87841ac8d"
         ],
         "price": 9.90,
@@ -144,11 +144,11 @@
         "id": "245aa28e-55db-4c3a-88ef-378dbcb8199f",
         "name": "Irlandês",
         "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
-        "categorieId": [
+        "categoriesIds": [
           "a46be92a-0df4-4c37-8607-6de87841ac8d",
           "a812ff26-4a96-4e6f-ae3b-7d52e8b7f2a5"
         ],
-        "price": 9.90,
+        "price": 12.90,
         "image": "irish"
       }
     ]

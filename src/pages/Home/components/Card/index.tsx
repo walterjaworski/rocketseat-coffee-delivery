@@ -1,9 +1,19 @@
 import * as S from './styles'
 
-import photoTemp from '../../../../assets/images/coffee/american.png'
 import { ShoppingCartSimple } from 'phosphor-react'
+import { Product } from '../CoffeeList'
 
-export function CoffeeCard() {
+interface CardProps {
+  data: Product
+  categories: string[]
+}
+
+export function CoffeeCard({ data, categories }: CardProps) {
+  const formatedPrice = data.price.toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+
   function handleIncreaseQuantity() {
     console.log('Increase quantity')
   }
@@ -19,22 +29,21 @@ export function CoffeeCard() {
   return (
     <S.Wrapper>
       <S.PhotoWrapper>
-        <img src={photoTemp} alt="" />
+        <img src={`src/assets/images/coffee/${data.image}.png`} alt="" />
       </S.PhotoWrapper>
       <S.LabelWrapper>
-        <S.Label>Tradicional</S.Label>
-        <S.Label>Gelado</S.Label>
+        {categories.map((category: string) => (
+          <S.Label key={category}>{category}</S.Label>
+        ))}
       </S.LabelWrapper>
       <S.Content>
-        <S.Title>Expresso Gelado</S.Title>
-        <S.Description>
-          Bebida preparada com café expresso e cubos de gelo
-        </S.Description>
+        <S.Title>{data.name}</S.Title>
+        <S.Description>{data.description}</S.Description>
       </S.Content>
       <S.Footer>
         <S.PriceContainer>
           <small>R$</small>
-          9,90
+          {formatedPrice}
         </S.PriceContainer>
         <S.QuantityContainer>
           <S.QuantityButton onClick={handleDecreaseQuantity}>
