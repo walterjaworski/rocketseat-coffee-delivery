@@ -9,7 +9,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   | 'primaryLight'
   | 'secondary'
   | 'secondaryLight'
-  | 'default'
+  | 'default',
 }
 
 export function Button({

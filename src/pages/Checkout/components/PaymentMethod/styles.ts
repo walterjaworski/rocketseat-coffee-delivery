@@ -28,9 +28,20 @@ export const Label = styled.label`
   font-size: ${({ theme }) => theme.fonts.roboto.size.xsmall};
   border-radius: 6px;
   padding: 16px;
+  cursor: pointer;
 
   svg {
     color: ${({ theme }) => theme.colors.secondary.dark};
+  }
+
+  &:hover,
+  &:focus {
+    background: ${({ theme }) => theme.colors.secondary.main};
+    color: ${({ theme }) => theme.colors.white};
+
+    svg {
+      color: ${({ theme }) => theme.colors.white};
+    }
   }
 
   &.active {

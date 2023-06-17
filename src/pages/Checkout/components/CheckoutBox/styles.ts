@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   background: ${({ theme }) => theme.colors.base.card};
   border-radius: 6px;
   padding: 2.5rem;
+  margin-bottom: 1rem;
 `
 
 export const Header = styled.header`

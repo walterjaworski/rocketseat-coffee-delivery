@@ -1,10 +1,13 @@
-import { CurrencyDollar, MapPinLine } from 'phosphor-react'
 import * as S from './styles'
+
 import { Card } from './components/Card'
-import { CheckoutBox } from './components/CheckoutBox'
-import { PaymentMethod } from './components/PaymentMethod'
+import { Form } from './components/Form'
+import { useContext } from 'react'
+import { CartContext } from '../../contexts/CartContext'
 
 export function Checkout() {
+  const { disableConfirmButton } = useContext(CartContext)
+
   function handleClickFinishOrder() {
     console.log('finish order')
   }
@@ -12,30 +15,12 @@ export function Checkout() {
   return (
     <S.CheckoutWrapper>
       <S.Wrapper>
-        <div>
+        <S.OrderDetails>
           <S.Title>Complete seu pedido</S.Title>
+          <Form />
+        </S.OrderDetails>
 
-          <CheckoutBox
-            title="Endereço de Entrega"
-            subtitle="Informe o endereço onde deseja receber o seu pedido."
-            icon={<MapPinLine size={22} />}
-            iconColor="primaryDark"
-          >
-            form
-          </CheckoutBox>
-
-          <CheckoutBox
-            title="Pagamento"
-            subtitle="O pagamento é feito na entrega. Escolha a forma que deseja
-            pagar."
-            icon={<CurrencyDollar size={22} />}
-            iconColor="secondaryDark"
-          >
-            <PaymentMethod />
-          </CheckoutBox>
-        </div>
-
-        <div>
+        <S.OrderProducts>
           <S.Title>Cafés selecionados</S.Title>
           <S.CheckoutItemsWrapper>
             <S.CheckoutItemsList>
@@ -54,11 +39,15 @@ export function Checkout() {
                 <strong>Total</strong> <strong>R$ 33,20</strong>
               </S.CheckoutItemsTotalsLine>
             </S.CheckoutItemsTotals>
-            <S.CheckoutButton type="button" onClick={handleClickFinishOrder}>
+            <S.CheckoutButton
+              type="button"
+              disabled={disableConfirmButton}
+              onClick={handleClickFinishOrder}
+            >
               Confirmar pedido
             </S.CheckoutButton>
           </S.CheckoutItemsWrapper>
-        </div>
+        </S.OrderProducts>
       </S.Wrapper>
     </S.CheckoutWrapper>
   )

@@ -19,6 +19,14 @@ export const ButtonContainer = styled.button`
     cursor: not-allowed;
   }
 
+  &.default {
+    background: ${({ theme }) => theme.colors.base.button};
+
+    svg {
+      color: ${({ theme }) => theme.colors.secondary.main};
+    }
+  }
+
   &.primary {
     background-color: ${({ theme }) => theme.colors.primary.main};
 
@@ -54,7 +62,7 @@ export const ButtonContainer = styled.button`
     color: ${({ theme }) => theme.colors.secondary.dark};
 
     svg {
-      fill: ${({ theme }) => theme.colors.secondary.main};
+      color: ${({ theme }) => theme.colors.secondary.main};
     }
 
     &:hover,
@@ -63,7 +71,7 @@ export const ButtonContainer = styled.button`
       color: ${({ theme }) => theme.colors.white};
 
       svg {
-        fill: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.white};
       }
     }
   }

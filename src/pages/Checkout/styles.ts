@@ -31,15 +31,18 @@ export const Title = styled.h2`
   margin-bottom: 1rem;
 `
 
-export const CheckoutBox = styled.div`
-  background: ${({ theme }) => theme.colors.base.card};
-  border-radius: 6px;
-  padding: 2.5rem;
+export const OrderDetails = styled.div``
 
-  & + & {
-    margin-top: 0.75rem;
-  }
-`
+// export const CheckoutBox = styled.div`
+//   background: ${({ theme }) => theme.colors.base.card};
+//   border-radius: 6px;
+//   padding: 2.5rem;
+//   margin-bottom: 1rem;
+
+//   & + & {
+//     margin-top: 0.75rem;
+//   }
+// `
 
 export const CheckoutBoxHeader = styled.header`
   display: flex;
@@ -68,6 +71,8 @@ export const CHeckoutBoxSubtitle = styled.span`
 export const CheckoutBoxContent = styled.div`
   margin-top: 2rem;
 `
+
+export const OrderProducts = styled.div``
 
 export const CheckoutItemsWrapper = styled.div`
   background: ${({ theme }) => theme.colors.base.card};
@@ -111,4 +116,10 @@ export const CheckoutButton = styled(Button)`
   text-transform: uppercase;
   margin-top: 1.5rem;
   padding: 0.75rem;
+
+  &:hover,
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.primary.dark};
+    color: ${({ theme }) => theme.colors.white};
+  }
 `

@@ -22,6 +22,12 @@ export const defaultTheme = {
       input: '#EDEDED',
       card: '#F3F2F2',
     },
+    warning: {
+      lighter: '#FFE6E8',
+      light: '#EC949B',
+      main: '#AB222E',
+      dark: '#961D28',
+    },
   },
   fonts: {
     roboto: {

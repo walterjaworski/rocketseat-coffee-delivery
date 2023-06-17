@@ -6,10 +6,8 @@ export function PaymentMethod() {
   const [paymentMethod, setPaymentMethod] = useState('')
 
   const handlePaymentChange = (event: any) => {
-    setPaymentMethod(event.target.value)
+    event.target.value !== '' && setPaymentMethod(event.target.value)
   }
-
-  console.log('PaymentMethod', paymentMethod)
 
   return (
     <S.Wrapper>
@@ -21,7 +19,7 @@ export function PaymentMethod() {
           checked={paymentMethod === 'credit'}
           onChange={handlePaymentChange}
         />
-        <CreditCard size={16} /> Cartão de crédito
+        <CreditCard size={20} /> Cartão de crédito
       </S.Label>
       <S.Label className={paymentMethod === 'debit' ? 'active' : ''}>
         <S.Input
@@ -31,7 +29,7 @@ export function PaymentMethod() {
           checked={paymentMethod === 'debit'}
           onChange={handlePaymentChange}
         />
-        <Bank size={16} /> Cartão de débito
+        <Bank size={20} /> Cartão de débito
       </S.Label>
       <S.Label className={paymentMethod === 'money' ? 'active' : ''}>
         <S.Input
@@ -41,7 +39,7 @@ export function PaymentMethod() {
           checked={paymentMethod === 'money'}
           onChange={handlePaymentChange}
         />
-        <Money size={16} /> Dinheiro
+        <Money size={20} /> Dinheiro
       </S.Label>
     </S.Wrapper>
   )
