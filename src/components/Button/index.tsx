@@ -10,16 +10,19 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   | 'secondary'
   | 'secondaryLight'
   | 'default',
+  label?: number
 }
 
 export function Button({
   children,
   icon,
   variant = 'default',
+  label,
   ...rest
 }: ButtonProps) {
   return (
     <S.ButtonContainer className={variant} {...rest}>
+      {!!label && <strong className='label'>{label}</strong>}
       {!!icon && icon}
       {children}
     </S.ButtonContainer>

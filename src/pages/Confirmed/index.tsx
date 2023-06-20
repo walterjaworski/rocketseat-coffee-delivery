@@ -2,8 +2,22 @@ import * as S from './styles'
 
 import DeliveryIllustration from '../../assets/images/delivery.svg'
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
+import { useContext } from 'react'
+import { CartContext, CartContextType } from '../../contexts/CartContext'
+
+interface PaymentMethodSelected {
+  [key: string]: string
+}
 
 export function Confirmed() {
+  const { delivery, paymentMethod } = useContext<CartContextType>(CartContext)
+
+  const paymentMethodSelected: PaymentMethodSelected = {
+    credit: 'Cartão de crédito',
+    debit: 'Cartão de débito',
+    money: 'Dinheiro',
+  }
+
   return (
     <S.ConfirmedWrapper>
       <S.Wrapper>
@@ -19,9 +33,17 @@ export function Confirmed() {
               </S.OrderIcon>
               <S.OrderText>
                 <S.OrderTextLine>
-                  Entrega em <strong>Rua Almirante Gonçalves, 616</strong>
+                  Entrega em{' '}
+                  <strong>
+                    {delivery.streetfield}, {delivery.numberfield}{' '}
+                    {!!delivery.complementfield &&
+                      `- ${delivery.complementfield}`}
+                  </strong>
                 </S.OrderTextLine>
-                <S.OrderTextLine>Rebouças - Curitiba, PR</S.OrderTextLine>
+                <S.OrderTextLine>
+                  {delivery.neighborhoodfield} - {delivery.cityfield},{' '}
+                  {delivery.statefield.toUpperCase()}
+                </S.OrderTextLine>
               </S.OrderText>
             </S.OrderLine>
             <S.OrderLine>
@@ -42,7 +64,7 @@ export function Confirmed() {
               <S.OrderText>
                 <S.OrderTextLine>Pagamento na entrega</S.OrderTextLine>
                 <S.OrderTextLine>
-                  <strong>Cartão de Crédito</strong>
+                  <strong>{paymentMethodSelected[paymentMethod]}</strong>
                 </S.OrderTextLine>
               </S.OrderText>
             </S.OrderLine>

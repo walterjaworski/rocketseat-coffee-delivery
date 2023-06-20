@@ -1,25 +1,27 @@
 /* eslint-disable prettier/prettier */
 import { createContext, ReactNode, useContext, useState } from 'react'
 
-interface Product {
+export interface Product {
   id: string
   name: string
   description: string
+  categoriesIds: string[]
   price: number
+  image: string
   quantity: number
 }
 
-interface Delivery {
-  cep: string
-  address: string
-  complement?: string
-  number: string
-  neighborhood: string
-  city: string
-  state: string
+export interface Delivery {
+  cepfield: string
+  streetfield: string
+  complementfield?: string
+  numberfield: string
+  neighborhoodfield: string
+  cityfield: string
+  statefield: string
 }
 
-interface CartContextType {
+export interface CartContextType {
   products: Product[]
   delivery: Delivery
   paymentMethod: string
@@ -29,15 +31,18 @@ interface CartContextType {
   removeProduct: (productId: string) => void
   increaseQuantity: (productId: string) => void
   decreaseQuantity: (productId: string) => void
+  setDeliveryAddress: (deliveryAddress: Delivery) => void;
+  setPaymentMethod: (paymentMethod: string) => void;
+  clearProducts: () => void;
 }
 
 const initialDelivery: Delivery = {
-  cep: '',
-  address: '',
-  number: '',
-  neighborhood: '',
-  city: '',
-  state: '',
+  cepfield: '',
+  streetfield: '',
+  numberfield: '',
+  neighborhoodfield: '',
+  cityfield: '',
+  statefield: '',
 }
 
 const initialCartContextValue: CartContextType = {
@@ -50,6 +55,9 @@ const initialCartContextValue: CartContextType = {
   removeProduct: () => { },
   increaseQuantity: () => { },
   decreaseQuantity: () => { },
+  setDeliveryAddress: () => { },
+  setPaymentMethod: () => { },
+  clearProducts: () => { },
 }
 
 export const CartContext = createContext<CartContextType>(
@@ -63,15 +71,8 @@ interface CartContextProviderProps {
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [disableConfirmButton, setDisableConfirmButton] = useState(true)
   const [products, setProducts] = useState<Product[]>([])
-
-  const delivery: Delivery = {
-    cep: '',
-    address: '',
-    number: '',
-    neighborhood: '',
-    city: '',
-    state: '',
-  }
+  const [delivery, setDelivery] = useState<Delivery>(initialDelivery)
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string>('money')
 
   const addProduct = (product: Product) => {
     setProducts((prevProducts) => [...prevProducts, product])
@@ -103,20 +104,32 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     )
   }
 
+  const setDeliveryAddress = (deliveryAddress: Delivery) => {
+    setDelivery(deliveryAddress)
+  }
+
+  const setPaymentMethod = (paymentMethod: string) => {
+    setSelectedPaymentMethod(paymentMethod)
+  }
+
+  const clearProducts = () => {
+    setProducts([]);
+  }
+
   const cartContextValue: CartContextType = {
     products,
     delivery,
-    paymentMethod: '',
+    paymentMethod: selectedPaymentMethod,
     disableConfirmButton,
     setDisableConfirmButton,
     addProduct,
     removeProduct,
     increaseQuantity,
     decreaseQuantity,
+    setDeliveryAddress,
+    setPaymentMethod,
+    clearProducts
   }
-
-  const cartContext = useContext(CartContext)
-  console.log('products in context', cartContext.products)
 
   return (
     <CartContext.Provider value={cartContextValue}>

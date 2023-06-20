@@ -9,9 +9,24 @@ export const ButtonContainer = styled.button`
   border-radius: 6px;
   padding: 8px;
   font-size: ${({ theme }) => theme.fonts.roboto.size.small};
+  position: relative;
 
-  span {
+  /* span {
     line-height: auto;
+  } */
+
+  .label {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: ${({ theme }) => theme.colors.primary.dark};
+    color: ${({ theme }) => theme.colors.white};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
   }
 
   &:disabled {

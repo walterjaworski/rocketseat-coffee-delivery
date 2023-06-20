@@ -13,7 +13,7 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
-import { CartContext } from '../../../../contexts/CartContext'
+import { CartContext, Delivery } from '../../../../contexts/CartContext'
 
 const addressFormValidationSchema = zod.object({
   cepfield: zod
@@ -48,12 +48,14 @@ const addressFormValidationSchema = zod.object({
 type AddressFormData = zod.infer<typeof addressFormValidationSchema>
 
 export function Form() {
-  const { setDisableConfirmButton } = useContext(CartContext)
+  const { setDisableConfirmButton, setDeliveryAddress, setPaymentMethod } =
+    useContext(CartContext)
 
   const {
     register,
     handleSubmit,
     watch,
+    getValues,
     formState: { errors, isValid },
   } = useForm<AddressFormData>({
     resolver: zodResolver(addressFormValidationSchema),
@@ -64,7 +66,14 @@ export function Form() {
   }
 
   useEffect(() => {
-    setDisableConfirmButton(!isValid)
+    if (isValid) {
+      const { paymentMethod, ...otherValues } = getValues()
+      setDeliveryAddress(otherValues)
+      setPaymentMethod(getValues('paymentMethod'))
+      setDisableConfirmButton(false)
+    } else {
+      setDisableConfirmButton(true)
+    }
   }, [isValid, setDisableConfirmButton])
 
   return (

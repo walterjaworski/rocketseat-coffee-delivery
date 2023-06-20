@@ -1,22 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Container } from '../../../../components/Container'
-import { CoffeeCard } from '../Card'
+import { CoffeeCard } from '../../../../components/Card'
 
 import * as S from './styles'
 
 import ProductsService from '../../../../services/ProductsService'
 import CategoriesService from '../../../../services/CategoriesService'
 
-export interface Product {
-  id: string
-  name: string
-  description: string
-  categoriesIds: string[]
-  price: number
-  image: string
-}
+import { Product } from '../../../../contexts/CartContext'
 
-interface Category {
+export interface Category {
   id: string
   name: string
   description: string
@@ -26,7 +19,7 @@ export function CoffeList() {
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<Category[]>([])
 
-  const hasProducts = products.length > 0
+  // const hasProducts = products.length > 0
   const hasCategories = categories.length > 0
 
   useEffect(() => {
@@ -71,6 +64,7 @@ export function CoffeList() {
                 key={product.id}
                 data={product}
                 categories={categoryNames}
+                variant="large"
               />
             )
           })}
