@@ -73,7 +73,7 @@ export function CoffeeCard({ data, categories, variant = 'large' }: CardProps) {
   return (
     <S.Wrapper variant={variant}>
       <S.PhotoWrapper variant={variant}>
-        <img src={`${isRunningLocally() && 'src'}/assets/images/coffee/${data.image}.png`} alt="" />
+        <img src={`${isRunningLocally() ? 'src' : ''}/assets/images/coffee/${data.image}.png`} alt="" />
       </S.PhotoWrapper>
       {largeCard && (
         <S.LabelWrapper>
