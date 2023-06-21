@@ -13,7 +13,7 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
-import { CartContext, Delivery } from '../../../../contexts/CartContext'
+import { CartContext } from '../../../../contexts/CartContext'
 
 const addressFormValidationSchema = zod.object({
   cepfield: zod
