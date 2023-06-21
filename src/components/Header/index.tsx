@@ -33,6 +33,7 @@ export function Header() {
           icon={<MapPin size={22} weight="fill" />}
           type="button"
           onClick={handleClickToChangeLocalization}
+          disabled
         >
           Curitiba, PR
         </Button>
