@@ -4,11 +4,14 @@ import { CoffeeCard } from '../../../../components/Card'
 
 import * as S from './styles'
 
-import ProductsService from '../../../../services/ProductsService'
-import CategoriesService from '../../../../services/CategoriesService'
+// import ProductsService from '../../../../services/ProductsService'
+// import CategoriesService from '../../../../services/CategoriesService'
 
 import { Product } from '../../../../contexts/CartContext'
 import { Error } from '../../../../components/Error'
+
+import categoriesData from '../../../../api/categories.json'
+import productsData from '../../../../api/products.json'
 
 export interface Category {
   id: string
@@ -19,39 +22,45 @@ export interface Category {
 export function CoffeList() {
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<Category[]>([])
-  const [hasError, setHasError] = useState<boolean>(true)
+  // const [hasError, setHasError] = useState<boolean>(false)
+  const [hasError] = useState<boolean>(false)
 
   const hasProducts = products.length > 0
   const hasCategories = categories.length > 0
 
+  // useEffect(() => {
+  //   async function getProducts() {
+  //     try {
+  //       setHasError(false)
+  //       const productsList = await ProductsService.getProducts()
+  //       setProducts(productsList.items)
+  //     } catch (error) {
+  //       console.log('Error getting products: ', error)
+  //       setHasError(true)
+  //     }
+  //   }
+
+  //   getProducts()
+  // }, [categories])
+
+  // useEffect(() => {
+  //   async function getCategories() {
+  //     try {
+  //       setHasError(false)
+  //       const categoriesList = await CategoriesService.getCategories()
+  //       setCategories(categoriesList.items)
+  //     } catch (error) {
+  //       console.log('Error getting categories: ', error)
+  //       setHasError(true)
+  //     }
+  //   }
+
+  //   getCategories()
+  // }, [])
+
   useEffect(() => {
-    async function getProducts() {
-      try {
-        setHasError(false)
-        const productsList = await ProductsService.getProducts()
-        setProducts(productsList.items)
-      } catch (error) {
-        console.log('Error getting products: ', error)
-        setHasError(true)
-      }
-    }
-
-    getProducts()
-  }, [categories])
-
-  useEffect(() => {
-    async function getCategories() {
-      try {
-        setHasError(false)
-        const categoriesList = await CategoriesService.getCategories()
-        setCategories(categoriesList.items)
-      } catch (error) {
-        console.log('Error getting categories: ', error)
-        setHasError(true)
-      }
-    }
-
-    getCategories()
+    setProducts(productsData.items)
+    setCategories(categoriesData.items)
   }, [])
 
   return (

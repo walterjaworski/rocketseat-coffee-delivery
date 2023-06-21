@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { createContext, ReactNode, useContext, useState } from 'react'
+import { createContext, ReactNode, useState } from 'react'
 
 export interface Product {
   id: string
